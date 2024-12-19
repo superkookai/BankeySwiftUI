@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingContainerView: View {
-    @ObservedObject var authService = AuthenService.shared
+//    @ObservedObject var authService = AuthenService.shared
     
     var body: some View {
         TabView {
@@ -22,7 +22,8 @@ struct OnboardingContainerView: View {
         .indexViewStyle(.page(backgroundDisplayMode: .always))
         .overlay(alignment: .topLeading) {
             Button("Close") {
-                authService.hasOndoarded = true
+                AuthenService.shared.hasOnboarded = true
+                UserDefaults.standard.set(AuthenService.shared.hasOnboarded, forKey: "hasOnboarded")
             }
             .padding()
         }

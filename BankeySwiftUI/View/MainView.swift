@@ -9,7 +9,16 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text("MainView")
+        VStack {
+            Text("MainView")
+            
+            Button {
+                AuthenService.shared.isAuthen = false
+            } label: {
+                Text("Sign Out")
+            }
+            .buttonStyle(.borderedProminent)
+        }
     }
 }
 

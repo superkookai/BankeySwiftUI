@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var authService = AuthenService.shared
+//    @ObservedObject var authService = AuthenService.shared
+    
+    @State var authService = AuthenService.shared
     
     var body: some View {
         ZStack{
             if !authService.isAuthen {
                 LoginView()
-            } else if !authService.hasOndoarded {
+            } else if !authService.hasOnboarded {
                 OnboardingContainerView()
             } else {
                 MainView()

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var authService = AuthenService.shared
+//    @ObservedObject var authService = AuthenService.shared
     @State private var username: String = ""
     @State private var password: String = ""
     
@@ -42,7 +42,8 @@ struct LoginView: View {
             
             VStack {
                 Button {
-                    authService.login(username: username, password: password)
+                    AuthenService.shared.login(username: username, password: password)
+//                    authService.login(username: username, password: password)
                 } label: {
                     Text("Sign In")
                         .font(.headline)
@@ -50,7 +51,7 @@ struct LoginView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 
-                Text(authService.errorMessage)
+                Text(AuthenService.shared.errorMessage)
                     .foregroundStyle(.red)
                     .multilineTextAlignment(.center)
             }
