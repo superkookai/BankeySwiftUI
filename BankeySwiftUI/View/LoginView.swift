@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
+    @ObservedObject var authService = AuthenService.shared
     @State private var username: String = ""
     @State private var password: String = ""
-    @State private var isError: Bool = false
-    @State private var errorMessage: String = ""
-    @State private var isLoading: Bool = false
     
     var body: some View {
         ZStack {
@@ -44,27 +42,17 @@ struct LoginView: View {
             
             VStack {
                 Button {
-                    signInTapped()
+                    authService.login(username: username, password: password)
                 } label: {
-                    HStack {
-                        if isLoading{
-                            ProgressView()
-                                .foregroundStyle(.white)
-                            Text("Loading")
-                        } else {
-                            Text("Sign In")
-                        }
-                    }
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
+                    Text("Sign In")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
                 
-                if isError {
-                    Text(errorMessage)
-                        .foregroundStyle(.red)
-                        .multilineTextAlignment(.center)
-                }
+                Text(authService.errorMessage)
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
             }
             .offset(y: 90)
             
@@ -72,20 +60,6 @@ struct LoginView: View {
         .padding()
     }
     
-    func signInTapped(){
-        if username.isEmpty || password.isEmpty{
-            isError = true
-            errorMessage = "Username / Password cannot be empty!"
-            return
-        }
-        
-        if username.lowercased() == "kai" && password.lowercased() == "password"{
-            isLoading = true
-        } else {
-            isError = true
-            errorMessage = "Incorrect username / password!"
-        }
-    }
 }
 
 #Preview {

@@ -11,8 +11,8 @@ import SwiftUI
 struct BankeySwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            LoginView()
+            ContentView()
+//            LoginView()
         }
     }
 }

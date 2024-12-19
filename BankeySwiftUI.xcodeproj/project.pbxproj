@@ -12,6 +12,10 @@
 		BF3334F02D12960B009C7167 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3334E82D12960B009C7167 /* Preview Assets.xcassets */; };
 		BF3334F12D12960B009C7167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3334EA2D12960B009C7167 /* Assets.xcassets */; };
 		BF3334F42D129638009C7167 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3334F32D129638009C7167 /* LoginView.swift */; };
+		BFF221F32D13FF4200C36270 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F22D13FF4200C36270 /* OnboardingView.swift */; };
+		BFF221F62D14017A00C36270 /* AuthenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F52D14017A00C36270 /* AuthenService.swift */; };
+		BFF221F82D1407D200C36270 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F72D1407D200C36270 /* OnboardingContainerView.swift */; };
+		BFF221FA2D140BD500C36270 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F92D140BD500C36270 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		BF3334EB2D12960B009C7167 /* BankeySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankeySwiftUIApp.swift; sourceTree = "<group>"; };
 		BF3334EC2D12960B009C7167 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF3334F32D129638009C7167 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BFF221F22D13FF4200C36270 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BFF221F52D14017A00C36270 /* AuthenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenService.swift; sourceTree = "<group>"; };
+		BFF221F72D1407D200C36270 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		BFF221F92D140BD500C36270 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 		BF3334ED2D12960B009C7167 /* BankeySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BFF221F42D14016600C36270 /* Service */,
 				BF3334F22D129621009C7167 /* View */,
 				BF3334EC2D12960B009C7167 /* ContentView.swift */,
 				BF3334EB2D12960B009C7167 /* BankeySwiftUIApp.swift */,
@@ -74,8 +83,19 @@
 			isa = PBXGroup;
 			children = (
 				BF3334F32D129638009C7167 /* LoginView.swift */,
+				BFF221F72D1407D200C36270 /* OnboardingContainerView.swift */,
+				BFF221F22D13FF4200C36270 /* OnboardingView.swift */,
+				BFF221F92D140BD500C36270 /* MainView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BFF221F42D14016600C36270 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BFF221F52D14017A00C36270 /* AuthenService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF221FA2D140BD500C36270 /* MainView.swift in Sources */,
 				BF3334F42D129638009C7167 /* LoginView.swift in Sources */,
+				BFF221F62D14017A00C36270 /* AuthenService.swift in Sources */,
 				BF3334EE2D12960B009C7167 /* BankeySwiftUIApp.swift in Sources */,
+				BFF221F82D1407D200C36270 /* OnboardingContainerView.swift in Sources */,
+				BFF221F32D13FF4200C36270 /* OnboardingView.swift in Sources */,
 				BF3334EF2D12960B009C7167 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
