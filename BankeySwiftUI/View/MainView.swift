@@ -13,7 +13,10 @@ struct MainView: View {
             Text("MainView")
             
             Button {
-                AuthenService.shared.isAuthen = false
+                withAnimation(.easeInOut) {
+                    AuthenService.shared.isAuthen = false
+                    NotificationService.shared.showMessage(title: "Sign Out", body: "You're signed out", kind: .notification)
+                }
             } label: {
                 Text("Sign Out")
             }

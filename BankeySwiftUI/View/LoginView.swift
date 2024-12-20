@@ -54,8 +54,10 @@ struct LoginView: View {
                 Text(AuthenService.shared.errorMessage)
                     .foregroundStyle(.red)
                     .multilineTextAlignment(.center)
+                    .frame(height: 20)
             }
             .offset(y: 90)
+            
             
         }
         .padding()
