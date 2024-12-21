@@ -8,23 +8,37 @@
 import SwiftUI
 
 struct MainView: View {
+    @State var selectedTab: Int = 2
+    
     var body: some View {
-        VStack {
-            Text("MainView")
-            
-            Button {
-                withAnimation(.easeInOut) {
-                    AuthenService.shared.isAuthen = false
-                    NotificationService.shared.showMessage(title: "Sign Out", body: "You're signed out", kind: .notification)
+        TabView(selection: $selectedTab) {
+            AccountSummaryView()
+                .tabItem {
+                    Text("Summary")
+                    Image(systemName: "list.dash.header.rectangle")
                 }
-            } label: {
-                Text("Sign Out")
-            }
-            .buttonStyle(.borderedProminent)
+                .tag(0)
+            
+            Text("Move Money")
+                .tabItem {
+                    Text("Move Money")
+                    Image(systemName: "arrow.left.arrow.right")
+                }
+                .tag(1)
+            
+            MoreView()
+                .tabItem {
+                    Text("More")
+                    Image(systemName: "ellipsis.circle")
+                }
+                .tag(2)
         }
+        .tint(.teal)
     }
 }
 
 #Preview {
     MainView()
 }
+
+
