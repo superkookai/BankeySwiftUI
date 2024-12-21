@@ -14,6 +14,8 @@
 		BF3334F42D129638009C7167 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3334F32D129638009C7167 /* LoginView.swift */; };
 		BF5052AE2D1558A600D05C19 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5052AD2D1558A600D05C19 /* NotificationService.swift */; };
 		BF5052B02D15615800D05C19 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5052AF2D15615800D05C19 /* MessageView.swift */; };
+		BFCF1E5C2D167D1100D19B74 /* AccountSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E5B2D167D1100D19B74 /* AccountSummaryView.swift */; };
+		BFCF1E5E2D167D6600D19B74 /* AccoutSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E5D2D167D6600D19B74 /* AccoutSummaryHeaderView.swift */; };
 		BFF221F32D13FF4200C36270 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F22D13FF4200C36270 /* OnboardingView.swift */; };
 		BFF221F62D14017A00C36270 /* AuthenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F52D14017A00C36270 /* AuthenService.swift */; };
 		BFF221F82D1407D200C36270 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F72D1407D200C36270 /* OnboardingContainerView.swift */; };
@@ -29,6 +31,8 @@
 		BF3334F32D129638009C7167 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BF5052AD2D1558A600D05C19 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		BF5052AF2D15615800D05C19 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		BFCF1E5B2D167D1100D19B74 /* AccountSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryView.swift; sourceTree = "<group>"; };
+		BFCF1E5D2D167D6600D19B74 /* AccoutSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccoutSummaryHeaderView.swift; sourceTree = "<group>"; };
 		BFF221F22D13FF4200C36270 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		BFF221F52D14017A00C36270 /* AuthenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenService.swift; sourceTree = "<group>"; };
 		BFF221F72D1407D200C36270 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				BFF221F22D13FF4200C36270 /* OnboardingView.swift */,
 				BFF221F92D140BD500C36270 /* MainView.swift */,
 				BF5052AF2D15615800D05C19 /* MessageView.swift */,
+				BFCF1E5B2D167D1100D19B74 /* AccountSummaryView.swift */,
+				BFCF1E5D2D167D6600D19B74 /* AccoutSummaryHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,9 +185,11 @@
 			files = (
 				BFF221FA2D140BD500C36270 /* MainView.swift in Sources */,
 				BF3334F42D129638009C7167 /* LoginView.swift in Sources */,
+				BFCF1E5E2D167D6600D19B74 /* AccoutSummaryHeaderView.swift in Sources */,
 				BFF221F62D14017A00C36270 /* AuthenService.swift in Sources */,
 				BF5052B02D15615800D05C19 /* MessageView.swift in Sources */,
 				BF3334EE2D12960B009C7167 /* BankeySwiftUIApp.swift in Sources */,
+				BFCF1E5C2D167D1100D19B74 /* AccountSummaryView.swift in Sources */,
 				BF5052AE2D1558A600D05C19 /* NotificationService.swift in Sources */,
 				BFF221F82D1407D200C36270 /* OnboardingContainerView.swift in Sources */,
 				BFF221F32D13FF4200C36270 /* OnboardingView.swift in Sources */,
