@@ -17,6 +17,10 @@
 		BFCF1E5C2D167D1100D19B74 /* AccountSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E5B2D167D1100D19B74 /* AccountSummaryView.swift */; };
 		BFCF1E5E2D167D6600D19B74 /* AccoutSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E5D2D167D6600D19B74 /* AccoutSummaryHeaderView.swift */; };
 		BFCF1E602D1682B600D19B74 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E5F2D1682B600D19B74 /* MoreView.swift */; };
+		BFCF1E6B2D16B6F400D19B74 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E6A2D16B6F400D19B74 /* Account.swift */; };
+		BFCF1E6D2D16B75700D19B74 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E6C2D16B75700D19B74 /* DataService.swift */; };
+		BFCF1E6F2D16B9CE00D19B74 /* AccountSummaryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E6E2D16B9CE00D19B74 /* AccountSummaryRowView.swift */; };
+		BFCF1E722D16C41000D19B74 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF1E712D16C41000D19B74 /* CurrencyFormatter.swift */; };
 		BFF221F32D13FF4200C36270 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F22D13FF4200C36270 /* OnboardingView.swift */; };
 		BFF221F62D14017A00C36270 /* AuthenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F52D14017A00C36270 /* AuthenService.swift */; };
 		BFF221F82D1407D200C36270 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF221F72D1407D200C36270 /* OnboardingContainerView.swift */; };
@@ -35,6 +39,10 @@
 		BFCF1E5B2D167D1100D19B74 /* AccountSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryView.swift; sourceTree = "<group>"; };
 		BFCF1E5D2D167D6600D19B74 /* AccoutSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccoutSummaryHeaderView.swift; sourceTree = "<group>"; };
 		BFCF1E5F2D1682B600D19B74 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		BFCF1E6A2D16B6F400D19B74 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		BFCF1E6C2D16B75700D19B74 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BFCF1E6E2D16B9CE00D19B74 /* AccountSummaryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryRowView.swift; sourceTree = "<group>"; };
+		BFCF1E712D16C41000D19B74 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		BFF221F22D13FF4200C36270 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		BFF221F52D14017A00C36270 /* AuthenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenService.swift; sourceTree = "<group>"; };
 		BFF221F72D1407D200C36270 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
@@ -79,6 +87,8 @@
 		BF3334ED2D12960B009C7167 /* BankeySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BFCF1E702D16C3F200D19B74 /* Helper */,
+				BFCF1E692D16B6E200D19B74 /* Model */,
 				BFF221F42D14016600C36270 /* Service */,
 				BF3334F22D129621009C7167 /* View */,
 				BF3334EC2D12960B009C7167 /* ContentView.swift */,
@@ -99,9 +109,26 @@
 				BF5052AF2D15615800D05C19 /* MessageView.swift */,
 				BFCF1E5B2D167D1100D19B74 /* AccountSummaryView.swift */,
 				BFCF1E5D2D167D6600D19B74 /* AccoutSummaryHeaderView.swift */,
+				BFCF1E6E2D16B9CE00D19B74 /* AccountSummaryRowView.swift */,
 				BFCF1E5F2D1682B600D19B74 /* MoreView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BFCF1E692D16B6E200D19B74 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFCF1E6A2D16B6F400D19B74 /* Account.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFCF1E702D16C3F200D19B74 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BFCF1E712D16C41000D19B74 /* CurrencyFormatter.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		BFF221F42D14016600C36270 /* Service */ = {
@@ -109,6 +136,7 @@
 			children = (
 				BFF221F52D14017A00C36270 /* AuthenService.swift */,
 				BF5052AD2D1558A600D05C19 /* NotificationService.swift */,
+				BFCF1E6C2D16B75700D19B74 /* DataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -187,11 +215,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF221FA2D140BD500C36270 /* MainView.swift in Sources */,
+				BFCF1E6D2D16B75700D19B74 /* DataService.swift in Sources */,
+				BFCF1E722D16C41000D19B74 /* CurrencyFormatter.swift in Sources */,
+				BFCF1E6B2D16B6F400D19B74 /* Account.swift in Sources */,
 				BF3334F42D129638009C7167 /* LoginView.swift in Sources */,
 				BFCF1E5E2D167D6600D19B74 /* AccoutSummaryHeaderView.swift in Sources */,
 				BFF221F62D14017A00C36270 /* AuthenService.swift in Sources */,
 				BF5052B02D15615800D05C19 /* MessageView.swift in Sources */,
 				BF3334EE2D12960B009C7167 /* BankeySwiftUIApp.swift in Sources */,
+				BFCF1E6F2D16B9CE00D19B74 /* AccountSummaryRowView.swift in Sources */,
 				BFCF1E5C2D167D1100D19B74 /* AccountSummaryView.swift in Sources */,
 				BFCF1E602D1682B600D19B74 /* MoreView.swift in Sources */,
 				BF5052AE2D1558A600D05C19 /* NotificationService.swift in Sources */,

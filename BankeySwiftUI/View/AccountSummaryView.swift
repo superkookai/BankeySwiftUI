@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct AccountSummaryView: View {
-    let games = [
-        "Pacman",
-        "Space Invaders",
-        "Space Patrol",
-    ]
+    let accounts: [Account] = DataService.shared.accounts
     
     var body: some View {
         VStack {
             AccoutSummaryHeaderView()
             
-            List(games, id: \.self) { game in
-                Text(game)
+            List(accounts) { account in
+                AccountSummaryRowView(account: account)
             }
             .listStyle(.plain)
         }
