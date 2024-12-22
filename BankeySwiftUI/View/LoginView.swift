@@ -27,8 +27,10 @@ struct LoginView: View {
             .offset(y: -150)
             
             VStack {
-                TextField("Username", text: $username)
-                    .textInputAutocapitalization(.words)
+//                TextField("Username", text: $username)
+//                    .textInputAutocapitalization(.words)
+                
+                TextFieldWithClearButton(text: $username)
                 
                 Divider()
                 
@@ -90,5 +92,27 @@ struct SecureFieldToggleView: View {
             }
         }
         .padding(.vertical,2)
+    }
+}
+
+struct TextFieldWithClearButton: View {
+    @Binding var text: String
+    
+    var body: some View {
+        HStack {
+            TextField("Username", text: $text)
+                .textInputAutocapitalization(.words)
+                .padding(.trailing, 30) // Add padding to make space for the button
+            
+            if !text.isEmpty {
+                Button(action: {
+                    text = ""
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
+                }
+                .padding(.trailing, 5) // Adjust button spacing
+            }
+        }
     }
 }
