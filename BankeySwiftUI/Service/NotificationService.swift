@@ -21,7 +21,9 @@ struct Message {
 @Observable
 class NotificationService {
     static let shared = NotificationService()
-    private init() {}
+    private init() {
+        listenMessageNotification()
+    }
     
     var message: Message?
     var showMessage: Bool = false
@@ -31,6 +33,15 @@ class NotificationService {
         message = Message(title: title, body: body, kind: kind)
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
             self.showMessage = false
+        }
+    }
+    
+    private func listenMessageNotification() {
+        let center = NotificationCenter.default
+        let mainQueue = OperationQueue.main
+        center.addObserver(forName: Notification.Name("Message"), object: nil, queue: mainQueue) { notification in
+            let userInfo : [String : String] = notification.userInfo as! [String : String]
+            self.showMessage(title: userInfo["title"]!, body: userInfo["body"]!)
         }
     }
 }

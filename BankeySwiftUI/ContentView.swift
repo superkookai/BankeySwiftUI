@@ -15,16 +15,16 @@ struct ContentView: View {
     
     var body: some View {
         ZStack{
-            if notificationService.showMessage {
-                MessageView(notificationService: notificationService)
-            }
-            
             if !authService.isAuthen {
                 LoginView()
             } else if !authService.hasOnboarded {
                 OnboardingContainerView()
             } else {
                 MainView()
+            }
+            
+            if notificationService.showMessage {
+                MessageView(notificationService: notificationService)
             }
         }
     }
