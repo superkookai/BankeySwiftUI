@@ -32,8 +32,9 @@ struct LoginView: View {
                 
                 Divider()
                 
-                SecureField("Password", text: $password)
-                    .textInputAutocapitalization(.none)
+//                SecureField("Password", text: $password)
+//                    .textInputAutocapitalization(.none)
+                SecureFieldToggleView(password: $password)
                 
             }
             .padding()
@@ -56,9 +57,7 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
                     .frame(height: 20)
             }
-            .offset(y: 90)
-            
-            
+            .offset(y: 100)
         }
         .padding()
     }
@@ -69,4 +68,27 @@ struct LoginView: View {
     LoginView()
 }
 
-//Test pushing
+struct SecureFieldToggleView: View {
+    @Binding var password: String
+    @State private var isPasswordVisible: Bool = false
+    
+    var body: some View {
+        HStack {
+            if isPasswordVisible {
+                TextField("Password", text: $password)
+                    .textInputAutocapitalization(.none)
+            } else {
+                SecureField("Password", text: $password)
+                    .textInputAutocapitalization(.none)
+            }
+            
+            Button(action: {
+                isPasswordVisible.toggle()
+            }) {
+                Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                    .foregroundColor(.gray)
+            }
+        }
+        .padding(.vertical,2)
+    }
+}

@@ -15,7 +15,9 @@ enum LoginError: Error {
 @Observable
 class AuthenService {
     static let shared = AuthenService()
-    private init() { }
+    private init() {
+        registerForNotifications()
+    }
     
     var isAuthen: Bool = false
     
@@ -52,6 +54,15 @@ class AuthenService {
             loginError = .invalidUsernameOrPassword
             isAuthen = false
         }
+    }
+    
+    private func registerForNotifications() {
+        let name = Notification.Name("logout")
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: name, object: nil)
+    }
+    
+    @objc func didLogout() {
+        isAuthen = false
     }
 }
 
