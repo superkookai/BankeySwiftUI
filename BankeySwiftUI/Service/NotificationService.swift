@@ -43,5 +43,6 @@ class NotificationService {
             let userInfo : [String : String] = notification.userInfo as! [String : String]
             self.showMessage(title: userInfo["title"]!, body: userInfo["body"]!)
         }
+        center.removeObserver(self, name: Notification.Name("Message"), object: nil)
     }
 }

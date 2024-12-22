@@ -63,6 +63,7 @@ class AuthenService {
     
     @objc func didLogout() {
         isAuthen = false
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("logout"), object: nil)
     }
 }
 
