@@ -11,6 +11,8 @@ struct LoginView: View {
 //    @ObservedObject var authService = AuthenService.shared
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var isOnScreen: Bool = false
+    @State private var shakeOffset: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -18,11 +20,15 @@ struct LoginView: View {
                 Text("Bankey")
                     .font(.largeTitle)
                     .padding(.bottom)
+                    .scaleEffect(isOnScreen ? 1 : 3)
+                    .animation(.easeInOut(duration: 2).repeatCount(2, autoreverses: true), value: isOnScreen)
                 
                 Text("Your premium source for all things banking!")
                     .font(.title3)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,50)
+                    .offset(x: isOnScreen ? 0 : -1000)
+                    .animation(.easeInOut(duration: 2), value: isOnScreen)
             }
             .offset(y: -150)
             
@@ -47,12 +53,18 @@ struct LoginView: View {
                 Button {
                     AuthenService.shared.login(username: username, password: password)
 //                    authService.login(username: username, password: password)
+                    
+                    if AuthenService.shared.loginError != nil {
+                        triggerShake()
+                    }
                 } label: {
                     Text("Sign In")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
+                .offset(x: shakeOffset)
+                .animation(.default, value: shakeOffset)
                 
                 Text(AuthenService.shared.errorMessage)
                     .foregroundStyle(.red)
@@ -62,6 +74,20 @@ struct LoginView: View {
             .offset(y: 100)
         }
         .padding()
+        .onAppear {
+            isOnScreen = true
+        }
+    }
+    
+    private func triggerShake() {
+        // The shake motion cycle
+        shakeOffset = -10
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            shakeOffset = 10
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            shakeOffset = 0
+        }
     }
     
 }

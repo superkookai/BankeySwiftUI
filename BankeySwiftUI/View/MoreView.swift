@@ -23,13 +23,13 @@ struct MoreView: View {
             .buttonStyle(.borderedProminent)
             
             Button {
-//                withAnimation {
-//                    NotificationService.shared.showMessage(title: "Error", body: "This is an error", kind: .error)
-//                }
-                withAnimation{
-                    let messageNotification = Notification(name: Notification.Name("Message"),userInfo: ["title" : "NotiTest", "body" : "This is a body"])
-                    NotificationCenter.default.post(messageNotification)
+                withAnimation {
+                    NotificationService.shared.showMessage(title: "Error", body: "This is an error", kind: .error)
                 }
+//                withAnimation{
+//                    let messageNotification = Notification(name: Notification.Name("Message"),userInfo: ["title" : "NotiTest", "body" : "This is a body"])
+//                    NotificationCenter.default.post(messageNotification)
+//                }
             } label: {
                 Text("Error Message")
             }
