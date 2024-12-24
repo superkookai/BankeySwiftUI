@@ -42,6 +42,15 @@ struct AccoutSummaryHeaderView: View {
                     .foregroundStyle(.white)
                     .padding(.trailing,10)
                     .padding(.bottom,10)
+                    .overlay(alignment: .topTrailing) {
+                        Text("9")
+                            .font(.system(size: 13))
+                            .foregroundStyle(.white)
+                            .padding(3)
+                            .background(.red)
+                            .clipShape(.circle)
+                            .offset(x: -6, y: -6)
+                    }
             }
             .rotationEffect(.radians(shakeAngle), anchor: .top)
             .animation(
